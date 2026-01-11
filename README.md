@@ -4,7 +4,7 @@
 
 Proje Konusu: Makine Dili ve Brookshear Mimarisi
 
-YouTube Linki: 
+YouTube Linki: https://youtu.be/HJ9dCAWPfZQ
 
 Proje Açıklaması: 
 Bu projede, makine dili ve Brookshear mimarisi teorik ve uygulamalı olarak incelenmiştir. İlk aşamada CPU yapısı, makine dili, komut seti ve Fetch–Decode–Execute döngüsü sunum ile açıklanmıştır.
