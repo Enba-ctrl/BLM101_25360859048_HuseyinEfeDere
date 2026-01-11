@@ -4,9 +4,10 @@ print("----- Brookshear Makine Dili Yorumlayıcısı -----")
 gecerli_hex_karakterler = "0123456789ABCDEFabcdef"
 
 # Kullanıcıdan veri al
-girilen_kod = input("Lütfen 4 haneli HEX kodunu giriniz (Örn: 14A3): ").strip()
+#Başa ve sona hatalı boşluk durumunu engelleek için 
+girilen_kod = input("Lütfen 4 haneli HEX kodunu giriniz (Örn: 14A3): ").strip()  #Başa ve sona hatalı boşluk tuşu gelme durumunu engellemek için strip yapısı var.
 
-# Çıktı değişkenlerini başta boş olarak tanımlama (Hata almamak için)
+# Çıktı değişkenleri
 parcalama_metni = ""
 aciklama_metni = ""
 
@@ -20,20 +21,18 @@ elif not all(c in gecerli_hex_karakterler for c in girilen_kod):
     print("HATA: Kod sadece 0-9 ve A-F arası karakterlerden oluşmalıdır.")
 
 else:
-    # HATA YOKSA BURASI ÇALIŞIR
     
     # Büyük harfe çevir
     hex_kod = girilen_kod.upper()
 
-    # Değişkenleri ayır
+    # Kodu Parçala
     opcode = hex_kod[0]
     reg_id = hex_kod[1]
     op2 = hex_kod[2]
     op3 = hex_kod[3]
     son_iki = hex_kod[2:]
 
-    # --- YORUMLAMA İŞLEMİ ---
-    
+    # Yorumlama kısmı
     if opcode == '1':
         parcalama_metni = f"Opcode={opcode}, Register={reg_id}, Adres={son_iki}"
         aciklama_metni = f"{son_iki} adresindeki bellek hücresinin içeriğini, {reg_id} numaralı kaydediciye (Register) yükle."
